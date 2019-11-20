@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>공차</title>
+	<link rel="stylesheet" href="css.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<a href="" id="quick">
+			<img src="./images/quick_img.png" class="quick">
+		</a>
+		<div id="header">
+				<a href="" class="gomain">
+						<img src="./images/fran.png" class="rollover">
+				</a>
+			<div id="header_inner">
+				<h1 class="logo">
+					<a href="">
+						<img src="./images/logo.png">
+					</a>
+				</h1>
+				<ul class="gnb" id="gnb">
+					<li>
+						<a href="">
+							<span class="main-ko">브랜드</span>
+							<span class="main-en">brand</span>
+						</a>
+						<ul>
+								<li><a href="">브랜드 소개</a></li>
+								<li><a href="">공차의 약속</a></li>
+								<li><a href="">브랜드 아이덴티티</a></li>
+								<li><a href="">세계속의 공차</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">
+							<span class="main-ko">메뉴</span>
+							<span class="main-en">menu</span>
+						</a>
+						<ul>
+								<li><a href="">주문방법</a></li>
+								<li><a href="">음료</a></li>
+								<li><a href="">디저트</a></li>
+								<li><a href="">MD상품</a></li>
+								<li><a href="">티스토리</a></li>
+								<li><a href="">티레시피</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">
+							<span class="main-ko">매장</span>
+							<span class="main-en">store</span>
+						</a>
+						<ul>
+								<li><a href="">매장찾기</a></li>
+							</ul>
+					</li>
+					<li>
+						<a href="">
+							<span class="main-ko">멤버십</span>
+							<span class="main-en">membership</span>
+						</a>
+						<ul>
+								<li><a href="">공차 멤버십</a></li>
+								<li><a href="">멤버십 오더</a></li>
+								<li><a href="">멤버십 금액권</a></li>
+								<li><a href="">선물하기</a></li>
+								<li><a href="">FAQ</a></li>
+							</ul>
+					</li>
+					<li>
+						<a href="">
+							<span class="main-ko">제휴</span>
+							<span class="main-en">benefit</span>
+						</a>
+						<ul>
+								<li><a href="">제휴 혜택</a></li>
+							</ul>
+					</li>
+					<li>
+						<a href="">
+							<span class="main-ko">이벤트&뉴스</span>
+							<span class="main-en">event&news</span>
+						</a>
+						<ul>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">공차소식</a></li>
+							</ul>
+					</li>
+					<ul class="until">
+					<li>
+						<a href="">고객센터</a>
+					</li>
+					<li>
+						<a href="">공지사항</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="./images/facebook.png" style="height:23px; width:23px;">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="./images/instargram.png" style="height:23px; width:23px;">
+						</a>
+					</li>
+					
+				</ul>
+				</ul>
+			</div>
+		</div>
+		<!--헤더 끝-->
+		<div id="container">
+			<div id="visualmain">
+				<div id="control_box">
+					<ul>
+						<li><a href="">다이어리 증정 프로모션</a></li>
+						<li><a href="">NEW 브라운 슈가</a></li>
+						<li><a href="">2019 겨울 음료</a></li>
+						<li><a href="">2019 베스트 콤비네이션</a></li>
+						<li><a href="">브라운 슈가 출시</a></li>
+					</ul>
+				</div>
+				<div id="slideshow">
+					<ul>
+						<li><img src="./images/slide1.jpg"></li>
+						<li><img src="./images/slide2.jpg"></li>
+						<li><img src="./images/slide3.jpg"></li>
+						<li><img src="./images/slide4.jpg"></li>
+						<li><img src="./images/slide5.jpg"></li>
+					</ul>
+					<div class="slide_control">
+						<a href="" class="slide-prev"><img src="./images/prev.png"></a>
+						<a href="" class="slide-next"><img src="./images/next.png"></a>
+					</div>
+				</div>
+				<div id="maincontent">
+					<div id="section1">
+						<a href=""><img src="./images/banner.jpg"></a>
+					</div>
+					<div id="section2">
+						<h2 class="tit">매장검색</h2>
+						<p id="txt">
+							공차 매장을 쉽고 빠르게
+							<br>
+							찾아보세요.
+						</p>
+						<input type="text" class="storeinput" placeholder="매장명 또는 주소를 입력하세요.">
+						<a class="btn">매장 검색하기</a>
+					</div>
+					<div id="section3">
+						<a href="">자세히 보기 ></a>
+					</div>
+					<div id="section4">
+						ddfdfd
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+
+
+
+	<script>
+		$(function(){
+			var slide = $("#slideshow").find("ul");
+
+			var slideCount = $("#slideshow ul li").length;
+			var slideWidth = $("#slideshow ul li").width();
+			var slideHeight = $("#slideshow ul li").height();
+			var sliderUiWidth = slideCount * slideWidth;
+			var rollingId;
+
+			$("slideshow").css({width:slideWidth, height:slideHeight});
+			$("slideshow ul").css({width:sliderUiWidth, marginLeft:-slideWidth});
+			$("slideshow ul li:last-child").prependTo("#slider ul");
+
+			rollingId = setInterval(function () {
+			slideStart();
+				}, 3000);
+
+			function slideStart() {
+				slide.animate({
+					left: -slideWidth
+				}, 700, function() {
+					$("#slideshow ul li:first-child").appendTo("#slideshow ul");
+			$(this).css("left", "");
+				})
+			}
+		});
+
+		$(function(){
+			$(".rollover").mouseover(function(){
+				$(this).attr("src", $(this).attr("src").replace(".png","_on.png"));
+			});
+			$(".rollover").mouseout(function(){
+				$(this).attr("src", $(this).attr("src").replace("_on.png",".png"));
+			});
+		});
+
+		$(function(){
+			$(".quick").mouseover(function(){
+				$(this).attr("src", $(this).attr("src").replace(".png","_on.png"));
+			});
+			$(".quick").mouseout(function(){
+				$(this).attr("src", $(this).attr("src").replace("_on.png",".png"));
+			});
+		});
+
+		$(function(){
+			$("#header_inner").hover(function(){
+				$("#header").css({height:"374px"})
+			}, function(){
+				$("#header").css({height:"110px"})
+			});
+		
+		});
+	</script>
+</body>
+</html>
