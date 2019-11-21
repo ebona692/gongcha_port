@@ -164,10 +164,42 @@
 						<a href="">자세히 보기 ></a>
 					</div>
 					<div id="section4">
-						ddfdfd
+						<a href="#none" class="control_next">></a>
+						<a href="#none" class="control_prev"><</a>
+						<ul>
+							<li><img src="./images/middlesilide1.png"></li>
+							<li><img src="./images/middlesilide2.jpg"></li>
+						</ul>
+					</div>
+					<div id="section5">
+
+					</div>
+					<div id="section6">
+					</div>
+					<div id="section7">
+
 					</div>
 				</div>
-			</div>
+				<div id="mainbottom">
+					<div id="bottomtab">
+						<div id="tabmenu">
+							<h2 class="tit">공차 티 레시피</h2>
+							<ul class="tab">
+									<li><a href="#" onclick="open('tab1')">오리지널 티</a></li>
+									<li><a href="#" onclick="open('tab2')">밀크티</a></li>
+									<li><a href="#" onclick="open('tab3')">공차 스페셜</a></li>
+									<li><a href="#" onclick="open('tab4')">그린티 에이드</a></li>
+							</ul>
+						</div>
+						<div class="tab1"></div>
+						<div class="tab2"></div>
+						<div class="tab3"></div>
+						<div class="tab4"></div>
+					</div>
+				</div>
+				<div id="footer_left"></div>
+				<div id="footer_right"></div>
+			</div> <!--비주얼메인-->
 		</div>	
 	</div>
 
@@ -197,6 +229,59 @@
 					left: -slideWidth
 				}, 700, function() {
 					$("#slideshow ul li:first-child").appendTo("#slideshow ul");
+			$(this).css("left", "");
+				})
+			}
+		});
+
+		$(function(){
+			var slide = $("#section4").find("ul");
+
+			var slideCount = $("#section4 ul li").length;
+			var slideWidth = $("#section4 ul li").width();
+			var slideHeight = $("#section4 ul li").height();
+			var sliderUiWidth = slideCount * slideWidth;
+			var rollingId;
+
+			$("section4").css({width:slideWidth, height:slideHeight});
+			$("section4 ul").css({width:sliderUiWidth, marginLeft:-slideWidth});
+			$("section4 ul li:last-child").prependTo("#section4 ul");
+
+			rollingId = setInterval(function () {
+			slideStart();
+				}, 3000);
+
+			function moveLeft() {
+				$("#section4 ul").animate({
+					left: + slideWidth
+				}, 600, function(){
+					$("#section4 ul li:last-child").prependTo("#section4 ul");
+					$("#section4 ul").css("left","");
+				});
+			};
+
+			function moveRight() {
+				$("#section4 ul").animate({
+					left: - slideWidth
+				}, 600, function(){
+					$("#section4 ul li:first-child").appendTo("#section4 ul");
+					$("#section4 ul").css("left","");
+				});
+			};
+			
+			$("a.control_prev").click(function(){
+				moveLeft();
+			});
+
+			$("a.control_next").click(function(){
+				moveRight();
+			});
+
+			function slideStart() {
+				slide.animate({
+					left: -slideWidth
+				}, 700, function() {
+					$("#section4 ul li:first-child").appendTo("#section4 ul");
 			$(this).css("left", "");
 				})
 			}
